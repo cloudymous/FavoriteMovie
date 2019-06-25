@@ -28,4 +28,5 @@ class MainActivity : AppCompatActivity() {
         val listMovieAdapter = ListMovieAdapter(list)
         rvList.adapter = listMovieAdapter
     }
+
 }
