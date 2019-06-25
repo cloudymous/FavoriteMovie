@@ -28,7 +28,7 @@ class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
 
         Glide.with(holder.itemView.context)
             .load(listMovie[position].moviePoster)
-            .apply(RequestOptions().override(150, 250))
+            .apply(RequestOptions().override(150, 300))
             .into(holder.imageBanner)
 
     }
