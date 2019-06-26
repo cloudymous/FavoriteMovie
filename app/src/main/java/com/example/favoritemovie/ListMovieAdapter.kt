@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -30,6 +31,11 @@ class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
             .load(listMovie[position].moviePoster)
             .apply(RequestOptions().override(150, 300))
             .into(holder.imageBanner)
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(holder.itemView.context, "Kamu Click " + listMovie[position].movieName, Toast.LENGTH_SHORT)
+                .show()
+        }
 
     }
 
