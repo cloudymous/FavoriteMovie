@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         tools:context=".DetailMovieActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+            android:id="@+id/imageDetailMovie"
+            android:layout_width="150dp"
+            android:layout_height="300dp"/>
+
+    <TextView
+            android:id="@+id/textViewDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageDetailMovie"
+            android:layout_toEndOf="@id/imageDetailMovie"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="@string/movie_title"/>
+
+    <TextView
+            android:id="@+id/textDetailOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageDetailMovie"
+            android:layout_toEndOf="@id/imageDetailMovie"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_below="@id/textViewDetailTitle"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            tools:text="Movie Description is so long "/>
+
+</RelativeLayout>
