@@ -1,6 +1,7 @@
 
 package com.example.favoritemovie
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +28,20 @@ class MainActivity : AppCompatActivity() {
         rvList.layoutManager = LinearLayoutManager(this)
         val listMovieAdapter = ListMovieAdapter(list)
         rvList.adapter = listMovieAdapter
+
+        listMovieAdapter.onItemClickListener = { movie ->
+            showDetailMovie(movie)
+        }
+    }
+
+    private fun showDetailMovie(movie: Movie) {
+
+        val detailMovieIntent = Intent(this@MainActivity, DetailMovieActivity::class.java)
+        detailMovieIntent.putExtra(DetailMovieActivity.EXTRA_TITLE, movie.movieName)
+        detailMovieIntent.putExtra(DetailMovieActivity.EXTRA_DETAIL, movie.movieOverview)
+        detailMovieIntent.putExtra(DetailMovieActivity.EXTRA_IMAGE, movie.moviePoster)
+
+        startActivity(detailMovieIntent)
     }
 
 }

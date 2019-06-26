@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -13,6 +12,7 @@ import com.bumptech.glide.request.RequestOptions
 class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
     RecyclerView.Adapter<ListMovieAdapter.MovieViewHolder>() {
 
+    var onItemClickListener: ((Movie) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val itemRow = LayoutInflater.from(parent.context).inflate(R.layout.item_list_movie, parent, false)
@@ -33,8 +33,7 @@ class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
             .into(holder.imageBanner)
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Kamu Click " + listMovie[position].movieName, Toast.LENGTH_SHORT)
-                .show()
+            onItemClickListener?.invoke(listMovie[holder.adapterPosition])
         }
 
     }
