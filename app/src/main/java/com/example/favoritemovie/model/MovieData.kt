@@ -1,4 +1,4 @@
-package com.example.favoritemovie
+package com.example.favoritemovie.model
 
 object MovieData {
 

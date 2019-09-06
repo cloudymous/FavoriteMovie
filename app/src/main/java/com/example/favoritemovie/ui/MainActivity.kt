@@ -1,11 +1,15 @@
 
-package com.example.favoritemovie
+package com.example.favoritemovie.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.favoritemovie.adapter.ListMovieAdapter
+import com.example.favoritemovie.model.Movie
+import com.example.favoritemovie.model.MovieData
+import com.example.favoritemovie.R
 
 class MainActivity : AppCompatActivity() {
 
