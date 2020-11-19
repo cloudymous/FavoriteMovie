@@ -12,6 +12,7 @@ import com.example.favoritemovie.model.Movie
 import com.example.favoritemovie.R
 
 class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
+
     RecyclerView.Adapter<ListMovieAdapter.MovieViewHolder>() {
 
     var onItemClickListener: ((Movie) -> Unit)? = null
@@ -26,6 +27,7 @@ class ListMovieAdapter(private val listMovie: ArrayList<Movie>) :
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+
         holder.tvTitle.text = listMovie[position].movieName
         holder.tvRating.text = listMovie[position].movieRating
 
